@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mama.soccer.data.models.CardData;
+
 /**
  * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
  *
@@ -32,7 +34,7 @@ public class CardPresenter extends Presenter implements View.OnClickListener {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
-        ((CardView) viewHolder.view).bind((String) item);
+        ((CardView) viewHolder.view).bind((CardData) item);
     }
 
     @Override
@@ -41,11 +43,11 @@ public class CardPresenter extends Presenter implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        Log.i("MoviePresenter", "Reached...item clicked..." + view);
+        Log.i("CardPresenter", "Reached...item clicked..." + view);
         if(view instanceof  CardView) {
-            CardView movieCardView = (CardView)view;
-            Log.i("MoviePresenter", "Reached...itemData = " + movieCardView.getItemData());
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(movieCardView.getItemData()));
+            CardView cardView = (CardView)view;
+            Log.i("CardPresenter", "Reached...cardData = " + cardView .getCardData().getCtaHttpUrl());
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(cardView .getCardData().getCtaHttpUrl()));
             context.startActivity(i);
         }
     }

@@ -7,12 +7,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mama.soccer.R;
+import com.mama.soccer.data.models.CardData;
 import com.mama.soccer.ui.base.BindableCardView;
 
 import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import lombok.Getter;
 
 /**
  * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
@@ -21,15 +23,17 @@ import butterknife.ButterKnife;
  * @version 1.0
  * @since 10/8/16.
  */
-public class CardView extends BindableCardView<String> {
+public class CardView extends BindableCardView<CardData> {
 
     @BindView(R.id.poster_iv)
+    @Getter
     ImageView mPosterIV;
 
     @BindView(R.id.vote_average_tv)
     TextView mVoteAverageTV;
 
-    String itemData;
+    @Getter
+    private CardData cardData;
 
     public CardView(Context context) {
         super(context);
@@ -37,21 +41,13 @@ public class CardView extends BindableCardView<String> {
     }
 
     @Override
-    protected void bind(String itemData) {
-        this.itemData = itemData;
+    protected void bind(CardData cardData) {
+        this.cardData = cardData;
         Glide.with(getContext())
-                .load("https://talksport.com/wp-content/uploads/sites/5/2019/10/NINTCHDBPICT000535500603.jpg")
+                .load(cardData.getTileImage())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(mPosterIV);
-        mVoteAverageTV.setText(String.format(Locale.getDefault(), "%s", itemData));
-    }
-
-    public ImageView getPosterIV() {
-        return mPosterIV;
-    }
-
-    public String getItemData() {
-        return itemData;
+        mVoteAverageTV.setText(String.format(Locale.getDefault(), "%s", cardData.getTitle()));
     }
 
     @Override
