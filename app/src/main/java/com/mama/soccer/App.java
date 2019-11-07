@@ -9,14 +9,6 @@ import com.mama.soccer.dagger.modules.HttpClientModule;
 
 import timber.log.Timber;
 
-/**
- * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 10/11/16.
- */
-
 public class App extends Application {
 
     private static App instance;

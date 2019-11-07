@@ -16,13 +16,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import lombok.Getter;
 
-/**
- * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 10/8/16.
- */
 public class CardView extends BindableCardView<CardData> {
 
     @BindView(R.id.team1)

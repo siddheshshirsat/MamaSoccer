@@ -23,7 +23,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion "28.0.1"
     defaultConfig {
-        applicationId "com.gabilheri.moviestmdb"
+        applicationId "com.mama.soccer"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1

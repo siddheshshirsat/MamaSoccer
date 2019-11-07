@@ -17,14 +17,6 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
 
-/**
- * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 10/11/16.
- */
-
 @Data
 @Builder
 public class CardTopic {

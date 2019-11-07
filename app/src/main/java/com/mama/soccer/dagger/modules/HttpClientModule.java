@@ -17,13 +17,6 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 
-/**
- * Created by <a href="mailto:marcus@gabilheri.com">Marcus Gabilheri</a>
- *
- * @author Marcus Gabilheri
- * @version 1.0
- * @since 9/4/16.
- */
 @Module
 public class HttpClientModule {
 

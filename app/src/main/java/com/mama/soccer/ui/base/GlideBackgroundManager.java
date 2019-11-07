@@ -16,15 +16,6 @@ import java.lang.ref.WeakReference;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * @author Marcus Gabilheri (gabilher)
- * @since 7/21/16
- */
-
-/**
- * NOTE: >> DO NOT USE << images with transparency on then. The BackgroundManager freaks out and a really weird
- * stuff happens with the cards.
- */
 public class GlideBackgroundManager {
 
     private static final String TAG = GlideBackgroundManager.class.getSimpleName();
