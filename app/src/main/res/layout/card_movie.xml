@@ -7,14 +7,14 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/poster_iv"
+        android:id="@+id/team1"
         android:layout_width="match_parent"
-        android:scaleType="centerCrop"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/vote_average_tv"
+        android:id="@+id/titleBar"
         android:padding="8dp"
         android:gravity="end|center_vertical"
         android:drawablePadding="8dp"
@@ -22,8 +22,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="16sp"
-        android:drawableEnd="@drawable/ic_star"
-        tools:text="4.0"/>
+        android:textSize="16sp" />
 
 </LinearLayout>

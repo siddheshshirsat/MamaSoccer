@@ -25,12 +25,12 @@ import lombok.Getter;
  */
 public class CardView extends BindableCardView<CardData> {
 
-    @BindView(R.id.poster_iv)
+    @BindView(R.id.team1)
     @Getter
-    ImageView mPosterIV;
+    ImageView mTeam1ImageView;
 
-    @BindView(R.id.vote_average_tv)
-    TextView mVoteAverageTV;
+    @BindView(R.id.titleBar)
+    TextView mTitleBar;
 
     @Getter
     private CardData cardData;
@@ -44,10 +44,11 @@ public class CardView extends BindableCardView<CardData> {
     protected void bind(CardData cardData) {
         this.cardData = cardData;
         Glide.with(getContext())
-                .load(cardData.getTileImage())
+                .load(cardData.getTeam1Image())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(mPosterIV);
-        mVoteAverageTV.setText(String.format(Locale.getDefault(), "%s", cardData.getTitle()));
+                .into(mTeam1ImageView);
+
+        mTitleBar.setText(String.format(Locale.getDefault(), "%s", cardData.getTitle()));
     }
 
     @Override

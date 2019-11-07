@@ -1,8 +1,8 @@
-package com.mama.soccer.ui.main;
+package com.mama.soccer.data.fetch;
 
 import android.util.Log;
 
-import com.mama.soccer.data.models.CardData;
+import com.mama.soccer.ui.main.CardTopic;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,15 +31,20 @@ public class EventLinkParserTask implements Callable<Boolean> {
         try {
             Document eventDoc = Jsoup.connect(url).get();
             Elements eventStreamLinks = eventDoc.select("a[href]");
+
             Elements titleElements = eventDoc.select("title");
             String title = titleElements.get(0).html();
+
+            Elements teamImageRows = eventDoc.select("tr");
+            Elements teamImageElements = teamImageRows.get(0).select("img[src]");
 
             for (Element eventStreamLink : eventStreamLinks) {
                 String eventStreamLinkText = eventStreamLink.attr("href");
                 if (eventStreamLinkText.contains("http://www.mamacdn.com/link.php?asad=")) {
-                    CardData cardData = CardData.builder()
+                    com.mama.soccer.data.models.CardData cardData = com.mama.soccer.data.models.CardData.builder()
                             .title(title)
-                            .tileImage("https://talksport.com/wp-content/uploads/sites/5/2019/10/NINTCHDBPICT000535500603.jpg")
+                            .team1Image(teamImageElements.get(0).attr("src"))
+                            .team2Image(teamImageElements.get(1).attr("src"))
                             .ctaHttpUrl(eventStreamLinkText.substring("http://www.mamacdn.com/link.php?asad=".length()))
                             .build();
                     cardTopic.getPublishSubject().onNext(cardData);

@@ -7,6 +7,7 @@ import lombok.Value;
 @Builder
 public class CardData {
     private String title;
-    private String tileImage;
+    private String team1Image;
+    private String team2Image;
     private String ctaHttpUrl;
 }
