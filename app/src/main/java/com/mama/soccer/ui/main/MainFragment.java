@@ -42,7 +42,7 @@ public class MainFragment extends BrowseSupportFragment implements OnItemViewSel
 
         // The brand color will be used as the background for the Headers fragment
 //        setBrandColor(ContextCompat.getColor(getActivity(), R.color.colorPrimary));
-//        setHeadersState(HEADERS_ENABLED);
+        setHeadersState(HEADERS_HIDDEN);
 //        setHeadersTransitionOnBackEnabled(true);
 
         createRows();
@@ -94,5 +94,4 @@ public class MainFragment extends BrowseSupportFragment implements OnItemViewSel
             cardTopics.get(i).getPublishSubject().onNext(cardData);
         }
     }
-
 }

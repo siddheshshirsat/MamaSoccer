@@ -38,7 +38,7 @@ public class CardTopic {
                             .id(0)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("Serie A")
-                            .urlSuffix("seria-a")
+                            .urlSuffix("serie-a")
                             .publishSubject(PublishSubject.create())
                             .build(),
 
@@ -46,7 +46,7 @@ public class CardTopic {
                             .id(1)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("Primere League")
-                            .urlSuffix("primere-league")
+                            .urlSuffix("premier-league")
                             .publishSubject(PublishSubject.create())
                             .build(),
 
@@ -54,7 +54,7 @@ public class CardTopic {
                             .id(2)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("La Liga")
-                            .urlSuffix("la-liga")
+                            .urlSuffix("laliga")
                             .publishSubject(PublishSubject.create())
                             .build(),
 
@@ -69,13 +69,21 @@ public class CardTopic {
                     CardTopic.builder()
                             .id(4)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
+                            .title("Ligue 1")
+                            .urlSuffix("ligue-1")
+                            .publishSubject(PublishSubject.create())
+                            .build(),
+
+                    CardTopic.builder()
+                            .id(5)
+                            .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("Champions League")
                             .urlSuffix("champions-league")
                             .publishSubject(PublishSubject.create())
                             .build(),
 
                     CardTopic.builder()
-                            .id(5)
+                            .id(6)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("Europa League")
                             .urlSuffix("europa-league")
@@ -83,7 +91,7 @@ public class CardTopic {
                             .build(),
 
                     CardTopic.builder()
-                            .id(6)
+                            .id(7)
                             .adapter(new ArrayObjectAdapter(cardPresenter))
                             .title("NBA")
                             .urlSuffix("nba")
